@@ -1,0 +1,28 @@
+.template_contentPopup{
+  display:none;
+  position:absolute;
+  z-index:500;
+  right:0;
+}
+#options-custom-style-status{
+  color:red;
+  font-weight:800;
+}
+.linterror{
+  color:red;
+}
+.lintwarning{
+  color:orange;
+}
+.lintokay{
+  color:green;
+}
+.editStyle{
+  cursor:pointer;
+}
+.deleteStyle{
+  cursor:pointer;
+}
+#template_content > div{
+  display:none;
+}

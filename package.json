@@ -1,0 +1,17 @@
+{
+  "description": "Adds the ability to insert pre-defined template content into a pad.",
+  "name": "ep_template_content",
+  "version": "0.0.1",
+  "author": {
+    "name": "John McLear",
+    "email": "john@mclear.co.uk"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/johnmclear/ep_template_content"
+  }
+}
