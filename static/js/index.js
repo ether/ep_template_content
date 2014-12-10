@@ -21,10 +21,12 @@ exports.postAceInit = function(hook, context){
       // write the input contents
       template_content.placeContentInPad(content);
     });
+    $('#template_content-selection').val(-1)
   });
 
   $('body').on('click', '#template_content-cancel', function(){
     padeditbar.toggleDropDown("template_content");
+    $('#template_content-selection').val(-1)
   });
 
 };
