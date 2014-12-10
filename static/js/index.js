@@ -22,6 +22,11 @@ exports.postAceInit = function(hook, context){
       template_content.placeContentInPad(content);
     });
   });
+
+  $('body').on('click', '#template_content-cancel', function(){
+    padeditbar.toggleDropDown("template_content");
+  });
+
 };
 
 var template_content = {
