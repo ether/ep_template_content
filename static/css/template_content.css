@@ -1,8 +1,7 @@
 .template_contentPopup{
-  display:none;
-  position:absolute;
-  z-index:500;
-  right:0;
+  background-color:#fff;
+  margin:20px;
+  padding:20px;
 }
 #options-custom-style-status{
   color:red;

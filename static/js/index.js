@@ -24,7 +24,7 @@ exports.postAceInit = function (hook, context) {
   });
 
   $('body').on('click', '#template_content-cancel', () => {
-    padeditbar.toggleDropDown('template_content');
+    $('#template_content').toggleClass('popup-show');
     $('#template_content-selection').val(-1);
   });
 };
@@ -37,7 +37,6 @@ var template_content = {
       const rep = ace.ace_getRep();
       const line = rep.lines.atIndex(rep.selStart[0]);
       self.highLightedString = line.text.substring(rep.selStart[1], rep.selEnd[1]);
-      console.warn(self.highLightedString);
     }, 'template_content_highLight', true);
   },
 
@@ -50,18 +49,16 @@ var template_content = {
       const label = $(`label[for='${$(_this).attr('id')}']`).text();
       const input = _this.val();
       content += `${label}: ${input}\n`;
-      console.warn(label, input);
     });
     cb(content);
   },
 
   showInput(value) {
     const padeditor = require('ep_etherpad-lite/static/js/pad_editor').padeditor;
-    console.warn('ace', padeditor.ace);
 
     $('#template_content > div').hide(); // hide all others
     $(`#template_content_${value}`).show(); // show this input
-    padeditbar.toggleDropDown('template_content');
+    $('#template_content').toggleClass('popup-show');
 
     // If highLigtedString is available pre-populate first input..
     if (self.highLightedString) {
