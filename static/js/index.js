@@ -1,9 +1,9 @@
-var $ = require('ep_etherpad-lite/static/js/rjquery').$;
+'use strict';
 
 // Bind the event handler to the toolbar buttons
-exports.postAceInit = function (hook, context) {
+exports.postAceInit = (hook, context) => {
   // Register UI elements and listeners
-  padeditbar.registerDropdownCommand('template_content');
+  window.padeditbar.registerDropdownCommand('template_content');
   const hs = $('#template_content-selection');
   hs.on('change', function () {
     const value = $(this).val();
@@ -29,9 +29,8 @@ exports.postAceInit = function (hook, context) {
   });
 };
 
-var template_content = {
-
-  getHighlighted(context) {
+const template_content = {
+  getHighlighted: (context) => {
     self.highLightedString = '';
     context.ace.callWithAce((ace) => {
       const rep = ace.ace_getRep();
@@ -40,12 +39,13 @@ var template_content = {
     }, 'template_content_highLight', true);
   },
 
-  getInputContents(cb) {
+  getInputContents: (cb) => {
     // For each input type in the dropdown
+    /* eslint-disable-next-line max-len */
     const inputs = $('#template_content > div > textarea:visible, #template_content > div > input:visible, #template_content > div > checkbox:visible');
     let content = '';
     $.each(inputs, (i, val) => {
-      _this = $(val);
+      const _this = $(val);
       const label = $(`label[for='${$(_this).attr('id')}']`).text();
       const input = _this.val();
       content += `${label}: ${input}\n`;
@@ -53,9 +53,7 @@ var template_content = {
     cb(content);
   },
 
-  showInput(value) {
-    const padeditor = require('ep_etherpad-lite/static/js/pad_editor').padeditor;
-
+  showInput: (value) => {
     $('#template_content > div').hide(); // hide all others
     $(`#template_content_${value}`).show(); // show this input
     $('#template_content').toggleClass('popup-show');
@@ -63,12 +61,13 @@ var template_content = {
     // If highLigtedString is available pre-populate first input..
     if (self.highLightedString) {
       // Set the first input as the value
+      /* eslint-disable-next-line max-len */
       const inputs = $('#template_content > div > textarea:visible, #template_content > div > input:visible, #template_content > div > checkbox:visible');
       $(inputs[0]).val(self.highLightedString);
     }
   },
 
-  placeContentInPad(content) {
+  placeContentInPad: (content) => {
     const padeditor = require('ep_etherpad-lite/static/js/pad_editor').padeditor;
     // Puts the completed form data in the pad.
     padeditor.ace.replaceRange(undefined, undefined, content);
