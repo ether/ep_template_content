@@ -1,3 +1,5 @@
+![Publish Status](https://github.com/ether/ep_template_content/workflows/Node.js%20Package/badge.svg) ![Backend Tests Status](https://github.com/ether/ep_template_content/workflows/Backend%20tests/badge.svg)
+
 [![Travis (.org)](https://api.travis-ci.org/johnmclear/ep_template_content.svg?branch=develop)](https://travis-ci.org/github/johnmclear/ep_template_content)
 
 # Insert template content into a pad
