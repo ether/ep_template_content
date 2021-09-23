@@ -17,4 +17,5 @@ exports.eejsBlock_styles = (hookName, args, cb) => {
       '<link href="' +
       '../static/plugins/ep_template_content/static/css/template_content.css' +
       '" rel="stylesheet">';
+  return cb();
 };
