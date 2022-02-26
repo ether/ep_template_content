@@ -1,7 +1,7 @@
 {
   "description": "Adds the ability to insert pre-defined template content into a pad.",
   "name": "ep_template_content",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "author": {
     "name": "John McLear",
     "email": "john@mclear.co.uk"
