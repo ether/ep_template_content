@@ -9,7 +9,7 @@ In this example plugin we should have content can be defined and then used as a 
 ![Screenshot](https://user-images.githubusercontent.com/220864/99979953-97841d80-2d9f-11eb-9782-5f65817c58f4.PNG)
 
 ## Installing
-npm install ep_template_content
+pnpm run plugins install ep_template_content
 
 or Use the Etherpad ``/admin`` interface.
 
